@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>ImageUpload </title>
+
+</head>
+<body>
+<form th:action="@{/upload_multiple}" method="post"
+    th:object="${candidate}"
+    enctype="multipart/form-data"
+    >
+    
+    <div>   
+    <label>firstName: </label>
+        <input type="text" name="firstName" th:field="*{firstName}" required />
+    </div> 
+    
+    <div>   
+    <label>lastName: </label>
+        <input type="text" name="lastName" th:field="*{lastName}" required />
+    </div> 
+  
+    <div>   
+    <label>Profile Picture: </label>
+        <input type="file" name="profilePictureFile" accept="image/png,image/jpg, image/jpeg" required />
+    </div>
+    <div>   
+    <label>Photo ID: </label>
+        <input type="file" name="photoIdFile"  accept="image/png,image/jpg, image/jpeg"  required />
+    </div>
+    <div>   
+    <label>Document: </label>
+        <input type="file" th:name="documentFile"   accept=".xlsx,.pdf" required />
+    </div>   
+    
+    <div><input th:type="submit"></div>
+ 
+</form>
+
+</body>
+</html>
